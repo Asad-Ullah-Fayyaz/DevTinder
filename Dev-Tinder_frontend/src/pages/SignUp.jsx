@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import {  useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import { BASE_URL } from "../utils/constants";
 const SignUp = () => {
   const [error,setError] = useState("")
     const navigate = useNavigate()
@@ -15,7 +15,7 @@ const SignUp = () => {
 
   const onSubmit = async (data) => {
         try {
-            await axios.post("http://localhost:5000/signup",{
+            await axios.post(`${BASE_URL}/signup`,{
               firstName :  data.firstName,
               lastName :  data.lastName,
               email :  data.email,

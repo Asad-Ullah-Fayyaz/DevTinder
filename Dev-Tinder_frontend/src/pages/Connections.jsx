@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 import { addConnection,removeConnection } from "../utils/conenctionSlice";
-
+import { BASE_URL } from "../utils/constants";
 const Connections = () => {
 
     
@@ -17,7 +17,7 @@ const Connections = () => {
     try {
       
     
-       await axios.delete("http://localhost:5000/user/connection/"+connection_id,{
+       await axios.delete(`${BASE_URL}/user/connection/`+connection_id,{
             withCredentials:true
         })
   
@@ -35,7 +35,7 @@ const Connections = () => {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/user/connections",
+        `${BASE_URL}/user/connections`,
         {
           withCredentials: true,
         }

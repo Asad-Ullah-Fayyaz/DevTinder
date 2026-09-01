@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-
+import { BASE_URL } from '../utils/constants';
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -40,7 +40,7 @@ function Header() {
     try {
 
       await axios.post(
-        "http://localhost:5000/logout",
+        `${BASE_URL}/logout`,
         {},
         {
           withCredentials: true
