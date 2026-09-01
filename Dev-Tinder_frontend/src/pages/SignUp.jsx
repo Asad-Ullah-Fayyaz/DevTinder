@@ -149,7 +149,7 @@ const SignUp = () => {
         </form>
          <p className="text-sm text-center text-gray-500 mt-6">
           Already have an account?{" "}
-          <span className="text-gray-900 font-medium cursor-pointer hover:underline">
+          <span className="text-gray-900 font-medium cursor-pointer hover:underline" onClick={ ()=>navigate("/login")}>
             Login
           </span>
         </p>
